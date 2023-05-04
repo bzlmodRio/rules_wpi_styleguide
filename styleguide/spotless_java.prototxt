@@ -1,0 +1,12 @@
+
+genericConfig: {
+    trimTrailingWhitespace: true
+    endWithNewline: true
+    indentWithSpacesSpacesPerTab: 4
+}
+
+java: {
+    removeUnusedImports: true
+    googleJavaFormat: {
+    }
+}
