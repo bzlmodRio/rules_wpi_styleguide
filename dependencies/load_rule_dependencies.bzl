@@ -1,50 +1,28 @@
-load("@bazel_tools//tools/build_defs/repo:http.bzl", "http_archive")
 load("@bazel_tools//tools/build_defs/repo:utils.bzl", "maybe")
+load("@bazel_tools//tools/build_defs/repo:http.bzl", "http_archive")
 
 def load_styleguide_rule_dependencies():
-
-    # maybe(
-    #     native.local_repository,
-    #     name = "rules_pmd",
-    #     path = "../../rules_pmd",
-    # )
-    # 
-    # maybe(
-    #     native.local_repository,
-    #     name = "rules_checkstyle",
-    #     path = "../../rules_checkstyle",
-    # )
-    # 
-    # maybe(
-    #     native.local_repository,
-    #     name = "rules_wpiformat",
-    #     path = "../../rules_wpiformat",
-    # )
-    # 
-    # maybe(
-    #     native.local_repository,
-    #     name = "rules_spotless",
-    #     path = "../../rules_spotless",
-    # )
-
     maybe(
         http_archive,
         name = "rules_pmd",
-        sha256 = "6007cf19e55cb06ef4ff4933e857a833f079a57ef89b7603b0c168f46ca400d4",
-        strip_prefix = "rules_pmd-6.39.0",
-        url = "https://github.com/bzlmodRio/rules_pmd/archive/refs/tags/6.39.0.tar.gz",
+        sha256 = "4bec86ee0d5bfc94fcebafb21afdb3d2c7740bc4bd6d7657fb9f63e94affbfae",
+        url = "https://github.com/bzlmodRio/rules_pmd/releases/download/6.43.0/rules_pmd-6.43.0.tar.gz",
     )
     maybe(
         http_archive,
         name = "rules_checkstyle",
-        sha256 = "c9ad648693b72137b27e274789cdf9d1f4b7b0bdeba1ea84a572b42ac5e3aac7",
-        strip_prefix = "rules_checkstyle-10.1",
-        url = "https://github.com/bzlmodRio/rules_checkstyle/archive/refs/tags/10.1.tar.gz",
+        sha256 = "94c5696d9948cc6d77168262e66845e41d37843831447dc71755a686d546c346",
+        url = "https://github.com/bzlmodRio/rules_checkstyle/releases/download/10.1/rules_checkstyle-10.1.tar.gz",
     )
     maybe(
         http_archive,
         name = "rules_wpiformat",
-        sha256 = "8bef5845cb4fbc4637910522630767c2cf83d8a2370ecdf990dc4daebdb8bc50",
-        strip_prefix = "rules_wpiformat-2022.30",
-        url = "https://github.com/bzlmodRio/rules_wpiformat/archive/refs/tags/2022.30.tar.gz",
+        sha256 = "b5a2a5cdff940e4dcd9d0188d5579cd260d2d96571b74b087acb701617bd27ad",
+        url = "https://github.com/bzlmodRio/rules_wpiformat/releases/download/2022.30/rules_wpiformat-2022.30.tar.gz",
+    )
+    maybe(
+        http_archive,
+        name = "rules_spotless",
+        sha256 = "b77138dab419a72194fbaeadc09467f198268a99c45242792fa5291acf02be1d",
+        url = "https://github.com/bzlmodRio/rules_spotless/releases/download/2.34.0/rules_spotless-2.34.0.tar.gz",
     )

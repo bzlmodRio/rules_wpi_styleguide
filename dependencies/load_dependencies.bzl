@@ -1,5 +1,3 @@
-
-
 load("@rules_pmd//dependencies:load_rule_dependencies.bzl", "load_pmd_rule_dependencies")
 load("@rules_checkstyle//dependencies:load_rule_dependencies.bzl", "load_checkstyle_rule_dependencies")
 load("@rules_wpiformat//dependencies:load_rule_dependencies.bzl", "load_wpiformat_rule_dependencies")

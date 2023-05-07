@@ -1,0 +1,9 @@
+load("@bazel_tools//tools/build_defs/repo:utils.bzl", "maybe")
+load("@bazel_tools//tools/build_defs/repo:http.bzl", "http_archive")
+
+
+def load_styleguide_rule_dependencies():
+{{ mandatory_dependencies.rules_pmd.download_repository(4, maybe=True) }}
+{{ mandatory_dependencies.rules_checkstyle.download_repository(4, maybe=True) }}
+{{ mandatory_dependencies.rules_wpiformat.download_repository(4, maybe=True) }}
+{{ mandatory_dependencies.rules_spotless.download_repository(4, maybe=True) }}

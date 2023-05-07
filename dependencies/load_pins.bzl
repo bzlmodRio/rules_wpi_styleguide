@@ -1,4 +1,3 @@
-
 load("@rules_wpiformat_pip//:requirements.bzl", "install_deps")
 load("@rules_pmd_dependencies//:defs.bzl", pmd_pinned_maven_install = "pinned_maven_install")
 load("@rules_checkstyle_dependencies//:defs.bzl", checkstyle_pinned_maven_install = "pinned_maven_install")
