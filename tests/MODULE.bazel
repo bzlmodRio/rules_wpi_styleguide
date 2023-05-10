@@ -1,0 +1,7 @@
+bazel_dep(name = "rules_wpi_styleguide", version = "")
+local_path_override(
+    module_name = "rules_wpi_styleguide",
+    path = "..",
+)
+
+bazel_dep(name = "rules_spotless", version = "2.34.0")

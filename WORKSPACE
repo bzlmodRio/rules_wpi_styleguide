@@ -10,6 +10,10 @@ load("//dependencies:load_dependencies.bzl", "load_styleguide_dependencies")
 
 load_styleguide_dependencies()
 
+load("//dependencies:load_transitive_dependencies.bzl", "load_styleguide_transitive_dependencies")
+
+load_styleguide_transitive_dependencies()
+
 # Setup dependencies
 load("//dependencies:setup_styleguide.bzl", "setup_styleguide")
 
