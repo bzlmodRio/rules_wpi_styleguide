@@ -10,6 +10,7 @@ from bazelrio_gentool.cli import add_generic_cli, GenericCliArgs
 import argparse
 from bazelrio_gentool.generate_shared_files import (
     write_shared_root_files,
+    write_shared_test_files,
 )
 from bazelrio_gentool.utils import TEMPLATE_BASE_DIR
 
@@ -39,11 +40,16 @@ def main():
     )
 
     write_shared_root_files(REPO_DIR, group)
+    write_shared_test_files(REPO_DIR, group)
 
     template_files = [
+        ".github/workflows/build.yml",
         "MODULE.bazel",
         "WORKSPACE",
         "dependencies/load_rule_dependencies.bzl",
+        "dependencies/load_transitive_dependencies.bzl",
+        "tests/MODULE.bazel",
+        "tests/WORKSPACE",
     ]
 
     render_templates(
@@ -55,7 +61,6 @@ def main():
     )
 
     template_files = [
-        ".github/workflows/build.yml",
         ".github/workflows/lint.yml",
     ]
     render_templates(

@@ -1,3 +1,4 @@
+{%- raw -%}
 name: Build example project
 on: [pull_request, push]
 
@@ -32,3 +33,4 @@ jobs:
 
     - run: bazel ${{ matrix.command }} //... -k ${{ matrix.config }} --config=remote --verbose_failures
       working-directory: tests
+{%- endraw %}

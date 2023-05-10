@@ -1,0 +1,3 @@
+package java;
+
+class BasicTest {}
