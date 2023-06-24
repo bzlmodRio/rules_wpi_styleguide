@@ -53,6 +53,11 @@ jobs:
     - run: bazel run //:publish
       working-directory: rules/rules_wpi_styleguide/generate
 
+    - name: Store version
+      run: echo "NEW_VERSION=$(bazel run //:get_version)" >> $GITHUB_ENV
+      working-directory: libraries/rules_wpi_styleguide/generate
+
+
     # Create pull requests
     - name: Create Gentool Pull Request
       uses: peter-evans/create-pull-request@v4
@@ -64,7 +69,7 @@ jobs:
         token: ${{ secrets.AUTO_UPDATE_KEY }}
         reviewers: pjreiniger
         branch: autoupdate/rules_wpi_styleguide_update
-        title: "Auto-update latest rules_wpi_styleguide module release"
+        title: "Auto Update rules_wpi_styleguide module to '${{ env.NEW_VERSION }}'"
 
     - name: Create BCR Pull Request
       uses: peter-evans/create-pull-request@v4
@@ -76,4 +81,4 @@ jobs:
         token: ${{ secrets.AUTO_UPDATE_KEY }}
         reviewers: pjreiniger
         branch: autoupdate/rules_wpi_styleguide_update
-        title: "Auto-update latest rules_wpi_styleguide module release"
+        title: "Auto Update latest rules_wpi_styleguide to '${{ env.NEW_VERSION }}'"

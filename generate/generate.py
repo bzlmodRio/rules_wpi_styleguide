@@ -12,6 +12,7 @@ from bazelrio_gentool.generate_shared_files import (
     write_shared_root_files,
     write_shared_test_files,
 )
+from bazelrio_gentool.generate_shared_files import get_bazel_dependencies
 from bazelrio_gentool.utils import TEMPLATE_BASE_DIR
 
 
@@ -58,6 +59,7 @@ def main():
         template_dir,
         container=group,
         mandatory_dependencies=mandatory_dependencies,
+        bazel_dependencies=get_bazel_dependencies(),
     )
 
     template_files = [

@@ -1,5 +1,5 @@
-load("@rules_pmd//pmd:defs.bzl", "pmd")
 load("@rules_checkstyle//checkstyle:defs.bzl", "checkstyle")
+load("@rules_pmd//pmd:defs.bzl", "pmd")
 load("@rules_spotless//spotless:defs.bzl", "spotless")
 
 def java_styleguide(name, srcs = None, pmd_rulesets = None, checkstyle_config_file = None, spotless_config_file = None):
