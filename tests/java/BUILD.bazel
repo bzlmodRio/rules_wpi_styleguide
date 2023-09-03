@@ -4,6 +4,7 @@ load("@rules_wpi_styleguide//styleguide:java_styleguide.bzl", "java_styleguide")
 java_library(
     name = "test_file",
     srcs = ["BasicTest.java"],
+    javacopts = ["-Werror"],
 )
 
 java_styleguide(name = "test-file")
