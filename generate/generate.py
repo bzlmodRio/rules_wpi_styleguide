@@ -69,6 +69,19 @@ def main():
         template_files, REPO_DIR, os.path.join(TEMPLATE_BASE_DIR, "styleguide")
     )
 
+    manual_fixes(REPO_DIR)
+
+
+def manual_fixes(repo_dir):
+    filename = os.path.join(repo_dir, ".github", "workflows", "build.yml")
+    with open(filename, "r") as f:
+        contents = f.read()
+
+    new_contents = contents + "\n"
+
+    with open(filename, "w") as f:
+        f.write(new_contents)
+
 
 if __name__ == "__main__":
     main()
