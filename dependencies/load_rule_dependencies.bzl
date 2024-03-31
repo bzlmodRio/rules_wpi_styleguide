@@ -17,8 +17,8 @@ def load_styleguide_rule_dependencies():
     maybe(
         http_archive,
         name = "rules_wpiformat",
-        sha256 = "3e5edc1516a8e2edb0c89d7e9e5b90f66e7fb6ec1dccd8c9bb2c12589a746176",
-        url = "https://github.com/bzlmodRio/rules_wpiformat/releases/download/2022.30/rules_wpiformat-2022.30.tar.gz",
+        sha256 = "04acf84801e279ba9e44dac8bdb5fe027fb75eb5e8c23bbc56e036804a6fa5e4",
+        url = "https://github.com/bzlmodRio/rules_wpiformat/releases/download/2024.34/rules_wpiformat-2024.34.tar.gz",
     )
     maybe(
         http_archive,
