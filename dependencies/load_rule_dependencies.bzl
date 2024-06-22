@@ -5,14 +5,14 @@ def load_styleguide_rule_dependencies():
     maybe(
         http_archive,
         name = "rules_pmd",
-        sha256 = "920de7134c12a6f5fb465aec0a4684451fe5dd992c5f4aae86551e6307d4cbe2",
-        url = "https://github.com/bzlmodRio/rules_pmd/releases/download/6.43.0/rules_pmd-6.43.0.tar.gz",
+        sha256 = "e0ac8b48e5ef240d4f5103431dde0351feedde55353777eb89601604781fced9",
+        url = "https://github.com/bzlmodRio/rules_pmd/releases/download/7.2.0/rules_pmd-7.2.0.tar.gz",
     )
     maybe(
         http_archive,
         name = "rules_checkstyle",
-        sha256 = "08c80009bf6e8af6d3e2e8b6493b86012ea4ab5bf0f62c527d53557552a03d77",
-        url = "https://github.com/bzlmodRio/rules_checkstyle/releases/download/10.1/rules_checkstyle-10.1.tar.gz",
+        sha256 = "7194b5ceb525b997d13e0b37604df2c057ea99e15fd88501cd00847dd6b41697",
+        url = "https://github.com/bzlmodRio/rules_checkstyle/releases/download/10.12.2/rules_checkstyle-10.12.2.tar.gz",
     )
     maybe(
         http_archive,
@@ -23,6 +23,6 @@ def load_styleguide_rule_dependencies():
     maybe(
         http_archive,
         name = "rules_spotless",
-        sha256 = "d0a49b0dd1c3e7a4efb7debb1cc39584345e10bf35494cd051d0e4e8a4d54241",
-        url = "https://github.com/bzlmodRio/rules_spotless/releases/download/2.34.0/rules_spotless-2.34.0.tar.gz",
+        sha256 = "984b7b6f7da7b1963161812cf2a735e6e59958efdb641e2751af088ff4a03b97",
+        url = "https://github.com/bzlmodRio/rules_spotless/releases/download/2.40.0/rules_spotless-2.40.0.tar.gz",
     )

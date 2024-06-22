@@ -3,7 +3,7 @@ module(
     version = "1.0.0",
 )
 
-bazel_dep(name = "rules_pmd", version = "6.43.0")
-bazel_dep(name = "rules_checkstyle", version = "10.1")
+bazel_dep(name = "rules_pmd", version = "7.2.0")
+bazel_dep(name = "rules_checkstyle", version = "10.12.2")
 bazel_dep(name = "rules_wpiformat", version = "2024.34")
-bazel_dep(name = "rules_spotless", version = "2.34.0")
+bazel_dep(name = "rules_spotless", version = "2.40.0")

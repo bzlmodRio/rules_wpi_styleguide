@@ -6,9 +6,6 @@
 
   <description>PMD Ruleset for WPILib</description>
 
-  <exclude-pattern>.*/*JNI.*</exclude-pattern>
-  <exclude-pattern>.*/*IntegrationTests.*</exclude-pattern>
-
   <rule ref="category/java/bestpractices.xml">
     <exclude name="AccessorClassGeneration" />
     <exclude name="AccessorMethodGeneration" />
@@ -37,24 +34,28 @@
         value=".*'.*Arguments\(\)'.*" />
     </properties>
   </rule>
+  <rule ref="category/java/bestpractices.xml/UnusedLocalVariable">
+    <properties>
+      <property name="violationSuppressXPath" value="//Resource"/>
+    </properties>
+  </rule>
 
   <rule ref="category/java/design.xml">
     <exclude name="AvoidThrowingRawExceptionTypes" />
+    <exclude name="AvoidThrowingNewInstanceOfSameException" />
     <exclude name="CognitiveComplexity" />
+    <exclude name="CouplingBetweenObjects" />
     <exclude name="CyclomaticComplexity" />
     <exclude name="DataClass" />
-    <exclude name="ExcessiveClassLength" />
+    <exclude name="ExceptionAsFlowControl" />
     <exclude name="ExcessiveImports" />
-    <exclude name="ExcessiveMethodLength" />
     <exclude name="ExcessiveParameterList" />
     <exclude name="ExcessivePublicCount" />
     <exclude name="GodClass" />
     <exclude name="LawOfDemeter" />
     <exclude name="LoosePackageCoupling" />
     <exclude name="NPathComplexity" />
-    <exclude name="NcssConstructorCount" />
     <exclude name="NcssCount" />
-    <exclude name="NcssMethodCount" />
     <exclude name="TooManyFields" />
     <exclude name="TooManyMethods" />
   </rule>
@@ -64,16 +65,14 @@
     <exclude name="AvoidCatchingThrowable" />
     <exclude name="AvoidDuplicateLiterals" />
     <exclude name="AvoidLiteralsInIfCondition" />
-    <exclude name="BeanMembersShouldSerialize" />
     <exclude name="CloseResource" />
     <exclude name="ConstructorCallsOverridableMethod" />
-    <exclude name="DataflowAnomalyAnalysis" />
     <exclude name="DoNotTerminateVM" />
     <exclude name="EmptyCatchBlock" />
-    <exclude name="EmptyWhileStmt" />
     <exclude name="FinalizeDoesNotCallSuperFinalize" />
     <exclude name="JUnitSpelling" />
     <exclude name="MissingSerialVersionUID" />
+    <exclude name="NonSerializableClass" />
     <exclude name="NullAssignment" />
   </rule>
 
@@ -85,7 +84,6 @@
   </rule>
 
   <rule ref="category/java/performance.xml">
-    <exclude name="AvoidUsingShortType" />
     <exclude name="AvoidInstantiatingObjectsInLoops" />
   </rule>
 
@@ -97,7 +95,7 @@
   <!-- Custom Rules -->
   <rule name="UseRequireNonNull"
     message="Use Objects.requireNonNull() instead of throwing a NullPointerException yourself."
-    language="java" class="net.sourceforge.pmd.lang.rule.XPathRule">
+    language="java" class="net.sourceforge.pmd.lang.rule.xpath.XPathRule">
     <description>Use Objects.requireNonNull() instead of throwing a
       NullPointerException yourself.</description>
     <properties>
