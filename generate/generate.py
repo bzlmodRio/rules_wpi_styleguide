@@ -13,6 +13,7 @@ from bazelrio_gentool.generate_shared_files import (
     write_shared_test_files,
 )
 from bazelrio_gentool.generate_shared_files import get_bazel_dependencies
+from bazelrio_gentool.manual_cleanup_helper import manual_cleanup_helper
 from bazelrio_gentool.utils import TEMPLATE_BASE_DIR
 
 
@@ -69,6 +70,14 @@ def main():
         template_files, REPO_DIR, os.path.join(TEMPLATE_BASE_DIR, "styleguide")
     )
 
+    template_files = [
+        ".bazelrc-java",
+        "tests/.bazelrc-java",
+    ]
+    render_templates(
+        template_files, REPO_DIR, os.path.join(TEMPLATE_BASE_DIR, "library_wrapper")
+    )
+
     manual_fixes(REPO_DIR)
 
 
@@ -81,6 +90,17 @@ def manual_fixes(repo_dir):
 
     with open(filename, "w") as f:
         f.write(new_contents)
+        
+    for f in [".bazelrc-java", "tests/.bazelrc-java"]:
+        manual_cleanup_helper(
+            os.path.join(repo_dir, f),
+            lambda contents: contents.replace(
+                "roboriojdk_17",
+                "remotejdk_17",
+            ),
+        )
+
+    
 
 
 if __name__ == "__main__":
