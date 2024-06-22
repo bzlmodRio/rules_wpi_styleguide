@@ -4,5 +4,5 @@ local_path_override(
     path = "..",
 )
 
-bazel_dep(name = "rules_java", version = "7.5.0")
-bazel_dep(name = "rules_spotless", version = "2.34.0")
+bazel_dep(name = "rules_java", version = "7.6.1")
+bazel_dep(name = "rules_spotless", version = "2.40.0")
