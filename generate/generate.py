@@ -90,7 +90,7 @@ def manual_fixes(repo_dir):
 
     with open(filename, "w") as f:
         f.write(new_contents)
-        
+
     for f in [".bazelrc-java", "tests/.bazelrc-java"]:
         manual_cleanup_helper(
             os.path.join(repo_dir, f),
@@ -99,8 +99,6 @@ def manual_fixes(repo_dir):
                 "remotejdk_17",
             ),
         )
-
-    
 
 
 if __name__ == "__main__":
