@@ -1,6 +1,6 @@
 module(
-    name = "rules_wpi_styleguide",
-    version = "1.0.0",
+    name = "{{container.repo_name}}",
+    version = "{{container.sanitized_version}}{{container.patch}}",
 )
 
 {{mandatory_dependencies.rules_pmd.module_dep()}}
