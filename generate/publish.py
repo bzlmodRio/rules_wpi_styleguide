@@ -17,6 +17,7 @@ def main():
     publish_module(
         registry_location,
         group,
+        container=group,
         module_json_template=None,
         module_template=module_template,
     )
