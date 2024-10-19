@@ -28,7 +28,7 @@ jobs:
     - uses: actions/setup-python@v4
       with:
         python-version: '3.11'
-    - run: bazel ${{ matrix.command }} //... -k ${{ matrix.config }} --config=remote --verbose_failures
+    - run: bazel ${{ matrix.command }} //... -k ${{ matrix.config }} --config=ci --verbose_failures
 
-    - run: bazel ${{ matrix.command }} //... -k ${{ matrix.config }} --config=remote --verbose_failures
+    - run: bazel ${{ matrix.command }} //... -k ${{ matrix.config }} --config=ci --verbose_failures
       working-directory: tests
