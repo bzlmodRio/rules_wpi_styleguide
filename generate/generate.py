@@ -1,20 +1,19 @@
+import argparse
 import os
-from get_styleguide_dependencies import get_styleguide_dependencies
 
+from bazelrio_gentool.clean_existing_version import clean_existing_version
+from bazelrio_gentool.cli import GenericCliArgs, add_generic_cli
 from bazelrio_gentool.generate_module_project_files import (
     create_default_mandatory_settings,
 )
-from bazelrio_gentool.clean_existing_version import clean_existing_version
-from bazelrio_gentool.utils import TEMPLATE_BASE_DIR, render_templates
-from bazelrio_gentool.cli import add_generic_cli, GenericCliArgs
-import argparse
 from bazelrio_gentool.generate_shared_files import (
+    get_bazel_dependencies,
     write_shared_root_files,
     write_shared_test_files,
 )
-from bazelrio_gentool.generate_shared_files import get_bazel_dependencies
 from bazelrio_gentool.manual_cleanup_helper import manual_cleanup_helper
-from bazelrio_gentool.utils import TEMPLATE_BASE_DIR
+from bazelrio_gentool.utils import TEMPLATE_BASE_DIR, render_templates
+from get_styleguide_dependencies import get_styleguide_dependencies
 
 
 def main():
