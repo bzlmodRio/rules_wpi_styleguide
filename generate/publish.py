@@ -1,6 +1,7 @@
 import os
-from get_styleguide_dependencies import get_styleguide_dependencies
+
 from bazelrio_gentool.publish_module import publish_module
+from get_styleguide_dependencies import get_styleguide_dependencies
 
 
 def main():

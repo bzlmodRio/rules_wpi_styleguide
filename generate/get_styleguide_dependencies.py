@@ -1,6 +1,4 @@
-from bazelrio_gentool.deps.dependency_container import (
-    DependencyContainer,
-)
+from bazelrio_gentool.deps.dependency_container import DependencyContainer
 
 
 def get_styleguide_dependencies():
