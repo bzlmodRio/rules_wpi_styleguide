@@ -23,6 +23,6 @@ def load_styleguide_rule_dependencies():
     maybe(
         http_archive,
         name = "rules_spotless",
-        sha256 = "984b7b6f7da7b1963161812cf2a735e6e59958efdb641e2751af088ff4a03b97",
-        url = "https://github.com/bzlmodRio/rules_spotless/releases/download/2.40.0/rules_spotless-2.40.0.tar.gz",
+        sha256 = "edb9b9768a44c23110b446624dcfd6717302cec51e5cad0b9156690d169bc8d5",
+        url = "https://github.com/bzlmodRio/rules_spotless/releases/download/2.40.0.bcr1/rules_spotless-2.40.0.bcr1.tar.gz",
     )
