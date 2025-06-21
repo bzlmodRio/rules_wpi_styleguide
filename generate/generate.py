@@ -47,8 +47,6 @@ def main():
         ".github/workflows/build.yml",
         "MODULE.bazel",
         "WORKSPACE",
-        "dependencies/load_rule_dependencies.bzl",
-        "dependencies/load_transitive_dependencies.bzl",
         "tests/MODULE.bazel",
         "tests/WORKSPACE",
     ]
