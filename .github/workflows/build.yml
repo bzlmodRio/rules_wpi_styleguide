@@ -12,12 +12,12 @@ jobs:
       matrix:
         include:
         # Build standard, native
-        - { name: "windows - native",        os: windows-2022,  command: "build",  config: "--noenable_bzlmod --enable_workspace --config=windows", bazel_options: "", }
+        - { name: "windows - native",        os: windows-2022,  command: "build",  config: "--noenable_bzlmod --enable_workspace --config=windows", bazel_options: "--output_user_root=C:\\bazelroot", }
         - { name: "ubuntu  - native",        os: ubuntu-22.04,  command: "build",  config: "--noenable_bzlmod --enable_workspace --config=linux",   bazel_options: "", }
         - { name: "macos   - native",        os: macos-14,      command: "build",  config: "--noenable_bzlmod --enable_workspace --config=macos",   bazel_options: "", }
 
         # Build bzlmod, native
-        - { name: "windows - bzlmod native", os: windows-2022,  command: "build",  config: "--config=windows", bazel_options: "", }
+        - { name: "windows - bzlmod native", os: windows-2022,  command: "build",  config: "--config=windows", bazel_options: "--output_user_root=C:\\bazelroot", }
         - { name: "ubuntu  - bzlmod native", os: ubuntu-22.04,  command: "build",  config: "--config=linux",   bazel_options: "", }
         - { name: "macos   - bzlmod native", os: macos-14,      command: "build",  config: "--config=macos",   bazel_options: "", }
 
@@ -28,7 +28,7 @@ jobs:
     - uses: actions/setup-python@v4
       with:
         python-version: '3.11'
-    - run: bazel ${{ matrix.command }} //... -k ${{ matrix.config }} --config=ci --verbose_failures
+    - run: bazel ${{ matrix.bazel_options}} ${{ matrix.command }} //... -k ${{ matrix.config }} --config=ci --verbose_failures
 
-    - run: bazel ${{ matrix.command }} //... -k ${{ matrix.config }} --config=ci --verbose_failures
+    - run: bazel ${{ matrix.bazel_options}} ${{ matrix.command }} //... -k ${{ matrix.config }} --config=ci --verbose_failures
       working-directory: tests
