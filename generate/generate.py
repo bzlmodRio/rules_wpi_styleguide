@@ -46,9 +46,7 @@ def main():
     template_files = [
         ".github/workflows/build.yml",
         "MODULE.bazel",
-        "WORKSPACE",
         "tests/MODULE.bazel",
-        "tests/WORKSPACE",
     ]
 
     render_templates(
